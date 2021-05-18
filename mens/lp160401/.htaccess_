@@ -1,0 +1,14 @@
+AddType application/x-httpd-php .php .html .htm
+
+ErrorDocument 401 http://demo.kireimo.biz/mens/
+ErrorDocument 404 http://demo.kireimo.biz/mens/
+ErrorDocument 403 http://demo.kireimo.biz/mens/
+ErrorDocument 500 http://demo.kireimo.biz/mens/
+ErrorDocument 503 http://demo.kireimo.biz/mens/
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (iPhone|Android.*Mobile|Windows.*Phone) [NC]
+RewriteCond %{QUERY_STRING} !mode=pc
+RewriteRule ^$ /mens/lp160401/sp/ [R,L]
+</IfModule>

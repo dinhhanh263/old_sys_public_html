@@ -1,0 +1,50 @@
+<?php include_once("../lib/shop_q/index.php");?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no" />
+  <title>KIREIMO ご感想アンケート</title>
+  <link rel="shortcut icon" href="../img/favicon.ico" />
+  <link rel="stylesheet" href="./css/shop_q.css" />
+  <!--  jquery core -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="./js/acction.js" type="text/javascript" charset="utf-8"></script>
+
+
+  <script type="text/javascript">
+    //ブラウザの「戻る」ボタンを禁止
+    history.forward();
+  $(document).ready(function() {
+      // 読み込み時
+      input_list();
+      after_push('#submit');
+    });
+  </script>
+</head>
+<body id="shop_q">
+  <form action="./" method="post" id="after_shop" name="after_shop" enctype="multipart/form-data" autocomplete="off">
+    <input type="hidden" name="action" value="edit" />
+    <input type="hidden" name="q_id" value="<?php echo $q_pattern['id'];?>" />
+    <input type="hidden" name="reservation_id" value="<?php echo $data['reservation_id'];?>" />
+    <div id="q_sheet">
+      <div id="title">KIREIMOご来店アンケート</div>
+        <?php if($error_msg === ''){ /* 正常 */ ?>
+          <div class="title_area">
+            <p><?php echo $for_msg; ?></p>
+            <span class="title_area_inner">本日ご提供のサービスはいかがでしたでしょうか。</span>
+            <span class="title_area_inner">当てはまるものにチェックをお願いいたします。</span>
+          </div>
+          <dl class="sheet-table">
+            <?php echo $html; ?>
+          </dl>
+          <div id="submit_area">
+            <button type="submit" class="submit" id="submit">回答する</button>
+          </div>
+        <?php }else{/* エラー時 */ echo '<div class="error">'.$error_msg.'</div>';} ?>
+    </div>
+  </form>
+  <footer id="footer">Copyright 2016 KIREIMO</footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+*.DS_Store*
+*_BK*
+*BK_*
+*_bk*
+*bk_*
+/config/
+/mens/config/
+.buildpath
+.project
+/.settings/

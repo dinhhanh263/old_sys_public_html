@@ -1,0 +1,15 @@
+AddType application/x-httpd-php .php .html .htm
+
+ErrorDocument 401 http://www.kireimo.jp/mens/
+ErrorDocument 404 http://www.kireimo.jp/mens/
+ErrorDocument 403 http://www.kireimo.jp/mens/
+ErrorDocument 500 http://www.kireimo.jp/mens/
+ErrorDocument 503 http://www.kireimo.jp/mens/
+
+#レスポンシブの為不要
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteCond %{HTTP_USER_AGENT} (iPhone|Android.*Mobile|Windows.*Phone) [NC]
+#RewriteCond %{QUERY_STRING} !mode=pc
+#RewriteRule ^$ /sp/counseling/ [R,L]
+#</IfModule>

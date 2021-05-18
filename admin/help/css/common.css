@@ -1,0 +1,44 @@
+@charset "utf-8";
+*{box-sizing: border-box;-webkit-text-size-adjust: 100%;}
+body{
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin:32px;
+}
+p{margin: 0 0 1em;line-height: 1.5;padding:0;}
+div{margin:0;}
+ul{list-style-position:inside;}
+li{line-height: 1.8;}
+h1{color:#2532A3; font-size: 16px;margin:0.7em 0 0.4em;}
+h2{font-size: 14px;margin:0.7em 0 0.4em;}
+h3{font-size:14px;}
+.red{color:#ff0000;font-weight:bold;}
+.comment{font-size:12px;margin: 0 0 0 16px;text-indent: 14px;}
+.m32{margin: 32px 0;}
+.indent1{padding-left:1em;}
+.brown{color: #B05B3A;}
+.news a{color:inherit;}
+.box {border: double 4px #8185A3;overflow:auto;padding: 32px 16px;}
+.box_inner{padding:8px;}
+.branch_nav{list-style-type:upper-alpha;}
+.branch_nav a{color:inherit;}
+dl.branch{background: #EDEAE8;margin-left: 1em;overflow: auto;padding: 16px;}
+.branch dt{color:#B05B3A;font-weight: bold;}
+.branch dd{background: #fff;display: inline-block; *display:inline; *zoom:1;line-height:1.4em;margin:0.5em 0 1.2em 1em;padding: 0.5em 0.5em 0.5em 1em;}
+
+/*===============================================
+●tablet 画面の横幅が768pxまで
+===============================================*/
+@media screen and (max-width: 768px){
+  body{font-size:12px;margin:0;}
+  p,h1,h2,h3,h4,h5,h6{margin:0 16px 8px;}
+  h1,h2,h3,h4,h5,h6{padding:8px 0;}
+  ul{margin:0 0 8px;}
+  .box_nav{padding-left:16px;}
+  .box{padding:16px 0;}
+  .box_inner{padding:0;}
+  dl.branch{margin:0;}
+  .branch dt{font-size:14px;}
+  .branch dd{margin:0 0 1em 1em;}
+}

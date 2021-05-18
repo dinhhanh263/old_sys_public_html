@@ -1,0 +1,43 @@
+<?php
+$DOC_ROOT = '';
+if (empty($_SERVER['DOCUMENT_ROOT'])) {
+    $dirs = explode('public_html', dirname(__FILE__));
+    $DOC_ROOT = str_replace($dirs[1], '', dirname(__FILE__));
+} else {
+    $DOC_ROOT = $_SERVER['DOCUMENT_ROOT'];
+}
+require_once $DOC_ROOT . '/config/config.php';
+require_once LIB_DIR . 'function.php';
+require_once LIB_DIR . 'db.php';
+require_once LIB_DIR . 'auth.php';
+//ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+
+$table = "job";
+
+//編集-------------------------------------------------------------------------------------------
+if( $_POST['action'] == "edit" ) {
+
+	if($_POST['id'] != ""){
+		$_POST['edit_date'] = date("Y-m-d H:i:s");
+		$data_ID = Input_Update_Data($table);
+	}else{
+		$_POST['reg_date'] = $_POST['edit_date'] = date("Y-m-d H:i:s");
+		$data_ID = Input_Data($table);
+	}
+	if( $data_ID ) 	header( "Location: ./");
+	else $gMsg = 'エラーが発生しました。<br><b><a href="javascript:history.back();">戻る</a></b>';
+}
+
+// 詳細を取得-------------------------------------------------------------------------------------------
+if( $_POST['id'] != "" )  $data = Get_Table_Row($table," WHERE id = '".addslashes($_POST['id'])."'");
+
+//店舗リスト------------------------------------------------------------------------
+$shop_list = getDatalist("shop");
+//求人媒体リスト
+$job_media_sql  = $GLOBALS['mysqldb']->query( "select * from job_media WHERE del_flg = 0 AND status=0 ORDER BY id" ) or die('query error'.$GLOBALS['mysqldb']->error);
+while ( $result = $job_media_sql->fetch_assoc() ) {
+    $job_media_list[$result['id']] = $result['name'];
+};
+
+?>

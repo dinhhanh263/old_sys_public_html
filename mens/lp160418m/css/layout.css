@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+.wrapper{
+	width: 100%;
+	margin:0 auto;
+	text-align:center;
+	background-color: #FFFFFF;
+}
+.wrapper2{
+	width:1100px;
+	margin:0 auto;
+	}
+/*-----------------ヘッダー-----------------------------------------*/
+#menu-wrap{
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+	background: rgba(255,255,255, 0.8);
+	transition: .3s;
+}
+#menu-wrap .menu-wrap-in{
+	overflow: hidden;
+	width:1105px;
+	margin: 0 auto;
+	padding:20px 0px;
+}
+#menu-wrap .logo{
+	float: left;
+}
+#menu-wrap ul{
+	float: right;
+}
+#menu-wrap ul li{
+	display: inline;
+	padding-left:10px;
+}
+
+#menu-wrap a.hover_img{
+	display:inline-block;
+	}
+#menu-wrap a.hover_img img{
+	transition:all 0.2s ease;
+	}
+#menu-wrap a:hover.hover_img img{
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	}
+
+.bg_black{
+	background: #000000;
+}
+.bg_brown{
+	background: #5B4137;
+}
+.bg_gray{
+	background:#444444;
+}
+.bg_grey_b {
+	background:#F0F0F0;	
+}
+.bg_white{
+	background-color: #FFFFFF;
+}
+.rollover{
+	transition:all 0.2s ease;
+}
+
+
+/*-----------------フッター-----------------------------------------*/
+footer{
+	width: 100%;
+}
+footer .footer-inner{
+	width: 1100px;
+	margin:0 auto;
+}
+footer .footer-inner #pageTop{
+	padding-right: 20px;
+	padding-bottom:20px;
+	position:fixed;
+	right:0;
+	bottom:0;
+	display:block;
+	cursor:pointer;
+}
+footer .footer-inner ul{
+	padding: 27px 64px 40px;
+	float:right;
+}
+footer .footer-inner ul li{
+	display: inline-block;
+}
+footer .footer-inner ul li{
+	display:inline;
+	list-style-type:none;
+	margin-right:15px;
+	padding-left:25px;
+}
+footer .footer-inner ul li+li {
+	border-left:1px solid #999;
+}
+footer .footer-inner ul li a{
+	color: #212121;
+	text-decoration: none;
+}
+footer .footer-inner ul li a:hover{
+	text-decoration: underline;
+}
+.footer_txt{
+	padding-top:20px;
+	}
+.footer_logo{
+	float:left;
+	padding-top:0px;
+	padding-left:70px;
+	}
+.copy{
+		font-size: 14px;
+	font-weight: normal;
+	color: #000000;
+	padding-top:240px;
+	padding-bottom:30px;
+	text-align: center;
+}
+/*-----------------ファーストビュー-----------------------------------------*/
+#main{
+   height: 718px;
+   	background: url(../img/main_image.jpg) no-repeat center;
+}
+.main_inner{
+	 position: relative;
+    width: 1100px;
+    height: 718px;
+    background: url(../img/main_image.jpg) no-repeat center;
+    margin: 0 auto;
+}
+.main_btn{
+	position: absolute;
+    width: 520px;
+	top: 411px;
+    left: 540px;
+	}
+/*-----------------ファーストビュー_b-----------------------------------------*/
+#main_b{
+	padding-top: 105px;
+	height: 706px;
+	position: relative;
+}
+#main_b:before {
+	width: 50%;
+	height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.main_in_b {
+    background-color: #2d1002;
+}
+.main_inner_b{
+	 position: relative;
+    width: 1500px;
+    height: 658px;
+    background: url(../img/main_image_b.jpg) no-repeat center;
+    margin: 0 auto;
+}
+.main_btn_b{
+	position: absolute;
+    top: 500px;
+    left: 740px;
+	}
+	
+/*-----------------ＣＶエリア_b----------------------------------------------------*/
+#cv_bg {
+	height: 619px;	
+	background-color: #2d0f04;
+	position: relative;
+}
+#cv_bg:before {
+	width: 50%;
+	height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.cv_btn_b{
+	position: absolute;
+    top: 468px;
+    left: 739px;
+}		
+/*-----------------ＣＶエリア----------------------------------------------------*/
+.mgB90{
+	margin-bottom:90px;
+}
+.cv{
+   height: 619px;
+   	background: url(../img/cv_bk.jpg) no-repeat center;
+}
+.cv_inner{
+	 position: relative;
+    width: 1500px;
+    height: 619px;
+    background: url(../img/cv_bk.jpg) no-repeat center;
+    margin: 0 auto;
+}
+.cv_btn{
+	position: absolute;
+    width: 592px;
+    top: 282px;
+    left: 512px;
+}
+#salon{
+	background-color: #F0F0F0;
+	padding-bottom: 68px;
+}
+
+/*-----------------MAP----------------------------------------------------*/
+.map{
+	position: relative;
+	width:1100px;
+   height:501px ;
+   	background: url(../img/salon_map_bk.png) no-repeat center;
+	 margin: 0 auto;
+}
+.map_btn{
+	position: absolute;
+    width: 380px;
+	top: 425px;
+    left: 515px;
+	}

@@ -1,0 +1,1 @@
+webpackJsonp([1],[function(t,e,a){(function(t){t(document).ready(function(){t(".animate").waypoint(function(e){t(this.element).velocity("stop").velocity({translateY:200,opacity:0},0).velocity({translateY:0,opacity:1,delay:800},1200,"easeOutQuart")},{offset:"100%"})})}).call(e,a(1))}]);

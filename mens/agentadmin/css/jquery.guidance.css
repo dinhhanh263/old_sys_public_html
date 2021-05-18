@@ -1,0 +1,10 @@
+#guidance_btn{background:#0C0606;-webkit-border-radius:8px;-moz-border-radius: 8px;-ms-border-radius: 8px;-o-border-radius: 8px;border-radius: 8px;color:#868383;cursor:pointer;display: inline-block; *display:inline; *zoom:1;font-size:12px;line-height:1.5;padding:6px 12px;position:fixed;bottom:20px;right:50px;z-index:100;}
+#guidance_btn.mode_on{background:#94b52c;color:#fff;}
+.transparency{/*height:0;*/-webkit-opacity: 0;-moz-opacity: 0;-ms-opacity: 0;-o-opacity: 0;opacity: 0;filter:alpha(opacity=0);}
+#guidance{background:#EBF7C1;border:solid 1px #E0DEA4;/*-webkit-border-radius:8px;-moz-border-radius: 8px;-ms-border-radius: 8px;-o-border-radius: 8px;border-radius: 8px;*/font-size:16px;display: inline-block;padding:5% 10% 32px;line-height:1.5;/*-webkit-opacity:0.95;-moz-opacity:0.95;-ms-opacity:0.95;-o-opacity:0.95;opacity:0.95;filter:alpha(opacity=95);*/position: fixed;top:0;left:0;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-ms-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease;width:100%;z-index:200;}
+/*#guidance{-moz-animation: flash 0.8s infinite; -webkit-animation: flash 0.8s infinite; animation: flash 0.8s infinite;}
+@-moz-keyframes flash{ 0%{opacity:1} 60%{opacity:0.9;} 100%{opacity:1} }
+@-webkit-keyframes flash{ 0%{opacity:1} 60%{opacity:0.9;} 100%{opacity:1} }
+@keyframes flash{ 0%{opacity:1} 60%{opacity:0.9;} 100%{opacity:1} }*/
+#guidance .emphasis{font-size:110%;font-weight:bold;}/* 強調 */
+#guidance .suppl{font-size:90%;}/* 補足 */

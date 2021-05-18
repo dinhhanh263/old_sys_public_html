@@ -1,0 +1,1 @@
+$(function(){function i(){var i=$(window).width();980>i&&(i=980);var e=.5625*i;n.height(e)}var n=$(".embed_movie");$(window).on("resize",i),i()});

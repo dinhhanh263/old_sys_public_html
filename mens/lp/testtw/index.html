@@ -1,0 +1,86 @@
+
+<?php
+// uaによる振り分け
+  $ua = $_SERVER["HTTP_USER_AGENT"];
+if ((strpos($ua, "Android") !== false) && (strpos($ua, "Mobile") !== false) || (strpos($ua, "iPhone") !== false) || (strpos($ua, "Windows Phone") !== false)) {
+  forsp();
+  exit();
+};
+  function forsp(){
+    include_once("../../lib/lp_common_sp.php");
+    $adcodeUrl = $_SERVER["REQUEST_URI"];//現在のURL取得
+    $patternUrl = "/\/lp\/.*?\//";
+    $thiscode = preg_match($patternUrl,$adcodeUrl,$matches);//[/lp/]を検索
+    // if($thiscode == 1){
+        $pattern = array();
+        $pattern[0] = "/lp/";
+        $pattern[1] = "/\//";
+        $thiscode = preg_replace($pattern,"",$matches[0]);//adcode部分のみ切り取り
+        session_save_path("../tmp");
+        session_start();
+        $_SESSION["PRE_AD_CODE"] = $thiscode;
+       // $replaceUrl = "http://demo3.kireimo.biz/";
+      // };
+
+    //iframeで読み込む予定のurlを取得する
+    $getHtml = file_get_contents("index.html");
+    $iframePart = explode("\n", $getHtml);
+    $iframeNo = key(preg_grep("/id=\"frame\"/",$iframePart));
+    $targetUrl = strstr($iframePart[$iframeNo],"src=\"");
+    $getUrl = explode("\"",$targetUrl);
+    $target = explode("?",$getUrl[1]);
+
+    //読み込み先のurlファイルを取得する
+    $originUrl =$target[0]."sp/index.html";
+    $dot ="../";
+    $url = str_replace($dot, "", $target[0])."sp/index.html";
+    $replaceUrlSp= $target[0]."sp";
+    $replacesrc = "src=\"./img";
+    $contents = "";
+    ob_start();//読み込み先のurlファイル出力のバッファリングを有効にする
+    include_once($originUrl);
+    $contents = ob_get_contents();//読み込み先のurlファイルのバッファを取得,変数に代入
+    $contents = str_replace($replacesrc, "src=\"".$replaceUrlSp."/img", $contents);
+    ob_end_clean();//出力バッファリングを終了
+    echo $contents;
+  };
+?>
+<html>
+<head>
+<meta name="viewport" content="height=device-height,width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="../../img/favicon.ico" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<style type="text/css" media="all">
+html{
+  overflow:hidden;
+}
+body{
+  margin:0;
+  padding:0;
+}
+#frame{
+  height:100%;
+  width:100%;
+}
+</style></head>
+<body onContextmenu="return false">
+<div class="clWrap">
+<iframe id="frame" src="../..//?adcode=testtw" frameborder="0" ></iframe>
+</div><!--/clWrap-->
+<script type="text/javascript">
+(function($){
+  $("document").ready(function(){
+      resizef();
+  });
+  window.onresize = resizef;
+  function resizef(){
+    var frame,ihref;
+    frame = document.getElementById("frame"),
+    frame.style.cssText = ";height:" + (window.innerHeight ||document.documentElement.clientHeight) + "px;";
+  };
+})(jQuery);
+</script>
+</body></html>
+		
+		

@@ -1,0 +1,50 @@
+
+# セッション情報の存続期間を設定
+ #1日以上たったセッション情報を消去
+ #php_value session.cookie_domain "kireimo.biz"
+ #php_value session.gc_maxlifetime 86400
+ #php_value session.cache_expire 1440
+ #セッションで利用するクッキーの有効期間を1日に
+ #php_value session.cookie_lifetime 86400
+
+AuthType Basic
+AuthName "secret area"
+AuthUserFile /var/www/demo.kireimo.biz/.htpasswd
+Require valid-user
+
+AddType image/gif .gif
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType application/x-javascript .js
+AddType application/javascript .js
+AddType text/javascript .js
+AddType "text/html; charset=utf-8" .html .htm
+AddType text/css .css
+AddType application/x-httpd-php .php .html .htm
+
+ExpiresActive On
+ExpiresByType image/gif "access plus 9 days"
+ExpiresByType image/jpeg "access plus 9 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType application/x-javascript "access plus 20 days"
+ExpiresByType application/javascript "access plus 20 days"
+ExpiresByType text/javascript "access plus 20 days"
+ExpiresByType text/html "modification plus 9 days"
+ExpiresByType text/css "access plus 20 days"
+
+php_flag display_errors off
+php_value error_reporting 0
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} ^(demo.kireimo.biz)(:80)? [NC]
+#RewriteRule ^(.*) http://demo.kireimo.biz/$1 [R=301,L]
+
+#RewriteCond %{THE_REQUEST} ^.*/index.html
+#RewriteRule ^(.*)index.html$ http://mens.kireimo.biz/mens/$1 [R=301,L]
+
+#RewriteCond %{HTTP_USER_AGENT} (iPhone|Android.*Mobile|Windows.*Phone) [NC]
+#RewriteCond %{QUERY_STRING} !mode=pc
+#RewriteRule ^$ /sp/ [R,L]
+#</IfModule>

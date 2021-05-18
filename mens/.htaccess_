@@ -1,0 +1,28 @@
+# サブドメインとセッション共有
+#php_value session.cookie_domain "kireimo.jp"
+
+AddType image/gif .gif
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType application/x-javascript .js
+AddType application/javascript .js
+AddType text/javascript .js
+AddType "text/html; charset=utf-8" .html .htm
+AddType text/css .css
+AddType application/x-httpd-php .php .html .htm
+
+ExpiresActive On
+ExpiresByType image/gif "access plus 9 days"
+ExpiresByType image/jpeg "access plus 9 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType application/x-javascript "access plus 20 days"
+ExpiresByType application/javascript "access plus 20 days"
+ExpiresByType text/javascript "access plus 20 days"
+ExpiresByType text/html "modification plus 9 days"
+ExpiresByType text/css "access plus 20 days"
+
+
+
+php_flag display_errors off
+php_value error_reporting 0
+

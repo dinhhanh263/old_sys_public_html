@@ -1,0 +1,230 @@
+@charset "utf-8";
+  *{
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    font-weight: 600;
+  }
+  body{
+    -webkit-text-size-adjust: 100%;
+  }
+  #q_sheet{
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+  }
+  #title{
+    color: #FFA0AC;
+    font-size: 18px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .title_area_inner{
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .dt_ques{
+    background:#7AD678;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0.4em 1em;
+  }
+  .ques_sel{
+    color: #232330;
+    margin:0 2% 30px 2%;
+  }
+  .one_item,
+  .q_title,
+  label{
+    vertical-align: middle;
+  }
+  .one_item{
+    display: table;
+    table-layout: fixed;
+    font-size: 0;
+    margin: 13px 0;
+    min-height: 45px;
+    position: relative;
+    width: 100%;
+  }
+  .q_title{
+    display:block;
+    display: table-caption;
+    font-size: 14px;
+    padding-bottom: 3px;
+  }
+  .radio,
+  .checkbox,
+  .text,.texarea{
+    color: inherit;
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /*margin: 15px 0;*/
+    outline: none;
+    padding: 11px 0;
+    text-align:center;
+  }
+  .radio,
+  .checkbox{
+    border:solid 1px #c9c9c9;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .radio{
+    display: table-cell;
+    width: 44%;
+  }
+  .checkbox{
+    margin:0;
+    padding-left: 1em;
+    text-align: left;
+    width:100%;
+    max-width: 500px;
+  }
+  .checked{
+    background:#63B7E5;
+    color: #fff;
+  }
+  input[type=radio],
+  input[type=checkbox],
+  input[type="text"]
+  textarea{
+    margin: 0;
+    padding: 0;
+  }
+  input[type=radio]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  input[type="text"],
+  textarea{
+    border: solid 1px #232330;
+    font-size: 15px;
+    padding: 8px;
+    width: 95%;
+  }
+  textarea{
+    height:5.5em;
+  }
+  select{
+    font-size: 15px;
+    padding: 13px;
+    width: 10em;
+  }
+  #submit_area{
+    text-align: center;
+  }
+  .submit{
+    background: #F25C05;
+    border: solid 1px #F25C05;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 18px;
+    padding:15px;
+    width: 50%;
+    max-width: 300px;
+    margin: 0 auto 60px;
+  }
+  .error{
+    color: #666;
+    margin: 30px 0;
+    text-align: center;
+  }
+  #footer{
+    color: #666;
+    font-size: 12px;
+    padding-top: 60px;
+    text-align: center;
+  }
+  @media screen and (min-width: 769px){
+    body{font-weight: 500;}
+    #q_sheet{max-width: 650px;}
+    .dt_ques{font-size: 18px;}
+    .q_title{font-size: 16px;}
+    .radio,
+    .text,.texarea{
+      font-size: 18px;
+    }
+    input[type="text"],
+    textarea{font-size: 18px;}
+    #title{
+      font-size: 24px;
+    }
+    .one_item{
+      margin-bottom: 30px;
+    }
+  }
+
+/* 20161110 ueda add */
+/* loading box 二重投稿防止用 */
+  #cover_box{
+    background:#fff;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    opacity: 0.7;
+    width:100vw;
+    z-index: 100;
+  }
+  #cover_inner_box{
+      -o-animation-name:text_animation;
+      -ms-animation-name:text_animation;
+      -webkit-animation-name:text_animation;
+      -moz-animation-name:text_animation;
+    animation-name:text_animation;
+      -o-animation-duration:1.7s;
+      -ms-animation-duration:1.7s;
+      -webkit-animation-duration:1.7s;
+      -moz-animation-duration:1.7s;
+    animation-duration:1.7s;
+      -o-animation-iteration-count:infinite;
+      -ms-animation-iteration-count:infinite;
+      -webkit-animation-iteration-count:infinite;
+      -moz-animation-iteration-count:infinite;
+    animation-iteration-count:infinite;
+      -o-animation-direction:normal;
+      -ms-animation-direction:normal;
+      -webkit-animation-direction:normal;
+      -moz-animation-direction:normal;
+    animation-direction:normal;
+    color:#3399FF;
+    font-size: 42px;
+    margin:30vh auto;
+    text-align: center;
+    width:100%;
+  }
+  @-o-keyframes text_animation{
+    0%{color:#fff;}
+    50%{color:#3399FF;}
+    100%{color:#fff;}
+  }
+  @-ms-keyframes text_animation{
+    0%{color:#fff;}
+    50%{color:#3399FF;}
+    100%{color:#fff;}
+  }
+  @-moz-keyframes text_animation{
+    0%{color:#fff;}
+    50%{color:#3399FF;}
+    100%{color:#fff;}
+  }
+  @-webkit-keyframes text_animation{
+    0%{color:#fff;}
+    50%{color:#3399FF;}
+    100%{color:#fff;}
+  }
+  @keyframes text_animation{
+    0%{color:#fff;}
+    50%{color:#3399FF;}
+    100%{color:#fff;}
+  }

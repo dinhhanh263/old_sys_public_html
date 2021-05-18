@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+.i__heading {
+  border-bottom: 1px solid #dbdbdb;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.i__heading h2 {
+  color: #4b4b4b;
+  font-family: Tahoma, 'メイリオ';
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: normal;
+}
+
+.i__field-group {
+  margin: 15px 10px;
+}
+
+.i__table-search {
+  width: 100%;
+}
+
+.i__table-search tr {
+  margin: 15px 10px;
+  height: 38px;
+}
+
+.i__table-search th {
+  font-size: 12px !important;
+  font-weight: normal;
+  text-align: left;
+  height: 38px !important;
+  width: 138px;
+}
+
+.i__table-search td {
+  font-size: 12px !important;
+}
+
+#product-table td,th {
+  font-size: 12px !important;
+}
+
+.i__table-bottom-border {
+  border-bottom: 1px solid #dbdbdb;
+  height: 50px !important;
+}
+
+.i__label {
+  color: #393939 !important;
+}
+
+.i__action-group {
+  text-align: right;
+  margin: 20px 0px;
+}
+
+.i__btn-action {
+  height: 25px;
+  padding: 0px 15px;
+}
+
+.i__btn-submit {
+  padding: 10px;
+  border: 5px;
+  color: white;
+  line-height: 14px;
+  font-weight: bold;
+  font-family: 'メイリオ';
+}
+
+.i__form-size.i__w70 {
+  width:70px !important;
+  height:21px;
+}
+
+.i__form-size.i__w-30 {
+  width: 30px !important;
+  height:21px;
+}
+
+.i__row {
+  width: 100%;
+  max-height: auto;
+  margin-bottom: 20px;
+}
+
+.i__col-6 {
+  float: left;
+  width: 63.4%;
+  margin: 0 0 0 30px;
+}
+
+.i__col-4 {
+  float: left;
+  width: 34%;
+}
+
+.i__grid {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.i__grid-half {
+  float: left;
+  width: 50%;
+}
+
+.i__text-center {
+  text-align: center !important;
+}
+
+.i__p-10 {
+  padding: 10px !important;
+}
+
+.i__m-r-10 {
+  margin-right: 10px !important;
+}
+
+.i__m-l-10 {
+  margin-left: 10px !important;
+}
+
+.i__border-none {
+  border: none !important;
+}
+
+.i__td-first {
+  background: #fff;
+  border: none !important;
+  text-align: center;
+}
+
+.i__button-center {
+  text-align: center;
+}
+
+.i__button-center input {
+  display: inline !important;
+  float: none !important;
+}
+
+.i__scroll-box {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2.2;
+  height: auto;
+  max-height: 300px;
+  padding: 0 2em;
+  margin: 0 auto 1em;
+  overflow: auto;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.i__data-cell th {
+  font-weight: normal !important;
+  text-align: justify !important;
+  -ms-text-justify: inter-ideograph !important;
+}
+
+.i__success-message {
+  color: green;
+}
+
+.i__error-message {
+  color: red;
+}
+
+.i__list-inline li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.i__hr {
+  border: 0px;
+  border-top: 1px solid #dbdbdb;
+  margin-top: 10px;
+}
+
+.i__lead {
+  color: #4b4b4b;
+  font-family: Tahoma, 'メイリオ';
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: normal;
+}

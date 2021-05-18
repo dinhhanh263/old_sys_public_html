@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+#wrapper{
+	width: 100%;
+	margin:0 auto;
+	text-align:center;
+	background-color: #FFFFFF;
+}
+p img {
+	width:100%;
+	}
+/*-----------------ヘッダー-----------------------------------------*/
+
+#menu-wrap{
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+	background: #FFFFFF;
+    transition: .3s;
+}
+.menu-wrap-in{
+	overflow: hidden;
+	margin: 0 auto;
+	padding:2% 0;
+}
+.logo img {
+	width:100%;
+	margin:0 auto;
+}
+.tel img {
+    position: absolute;
+    right: 1.5%;
+    top: 8%;
+    width: 39%;
+}
+
+#menu-wrap ul{
+	overflow: hidden;
+	margin: 2% 0;
+}
+#menu-wrap ul li{
+	display: inline;
+	margin-right: 1%;
+}
+#menu-wrap ul li:last-child{
+	margin-right: 0;
+}
+.header_salon{
+	width: 41%;
+	}
+.header_counseling{
+	width:55%;
+}
+/*-----------------メイン-----------------------------------------*/
+.main{
+	padding-top: 27%;
+}
+.bg_black{
+	background: #000000;
+}
+.bg_brown{
+	background: #5B4137;
+}
+.bg_gray{
+	background:#444444;
+}
+/*-----------------フッター-----------------------------------------*/
+footer{
+	width: 100%;
+}
+.footer-inner{
+	width: 100%;
+	text-align:left;
+	padding-top:10%;
+}
+#pageTop{
+	padding-right: 3%;
+	padding-bottom:3%;
+	position:fixed;
+	right:0;
+	bottom:0;
+	display:block;
+	cursor:pointer;
+}
+.footer-inner ul{
+	padding: 4% 0 8%;
+	font-size:14px;
+}
+ .footer-inner ul li{
+	display: inline-block;
+	display:inline;
+	list-style-type:none;
+	margin-right:3%;
+	padding-left:4%;
+}
+.footer-inner ul li+li {
+	border-left:1px solid #999;
+}
+.footer-inner ul li a{
+	color: #212121;
+	text-decoration: none;
+}
+.footer-inner ul li a:hover{
+	text-decoration: underline;
+}
+footer p{
+	font-size: 14px;
+	font-weight: normal;
+	background: #444444;
+	color: #FFF;
+	padding:16% 0 30%;
+	text-align: center;
+}
+/*-----------------サロン情報-----------------------------------------*/
+#salon{
+	padding-top:10%;
+	padding-bottom:5%;
+	background:#444444;
+	}

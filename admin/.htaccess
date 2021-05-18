@@ -1,0 +1,4 @@
+# セッション情報の存続期間を設定
+php_value session.gc_maxlifetime 1440
+
+php_value session.cache_expire 180

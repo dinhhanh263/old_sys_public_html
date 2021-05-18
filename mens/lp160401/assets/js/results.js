@@ -1,0 +1,1 @@
+$(function(){$contents=$(".section-results").children(),$("#js-tab-ctrl li").click(function(){var n=$(this).index();$contents.hide().eq(n).fadeIn(300)})});

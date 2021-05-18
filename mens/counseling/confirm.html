@@ -1,0 +1,205 @@
+<?php
+    //session_save_path("../tmp");
+    session_start();
+    header('Expires:-1');
+    header('Cache-Control:');
+    header('Pragma:');
+    include_once("../lib/tag.php");
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>予約フォーム｜メンズ脱毛サロン【MEN'S KIREIMO】</title>
+<meta charset="utf-8">
+<meta name="description" content="メンズ脱毛のご予約はこちらから。当サロンでは、お待ち頂く時間を少なくするために、予約優先制をとっております。 お電話もしくは、予約フォームよりお問い合わせください。">
+<meta name="keywords" content="予約,メンズキレイモ,脱毛,男性">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="../css/counseling/style_c.css">
+<link rel="stylesheet" media="screen and (max-width:800px)" href="../css/counseling/sp_style_c.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.theme.min.css">
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/base.js"></script>
+<!--[if lt IE 9]>
+<script src="../js/html5shiv.js"></script>
+<![endif]-->
+<?php echo $tag_head;?>
+</head>
+<body>
+          <?php echo $tag_common1;?>
+<!-- <header>
+	<div class="inner">
+		<h1><a href="../"><img src="../images/logo.png" width="177" height="78" alt="メンズ脱毛サロン【MEN'S KIREIMO】"></a></h1>
+		<div id="spnav">
+			<nav>
+				<ul>
+					<li><a href="../about/">はじめての方へ<br>
+						<span>about</span></a></li>
+					<li><a href="../price/">料金プラン<br>
+						<span>price</span></a></li>
+					<li><a href="../media/">メディア掲載<br>
+						<span>media</span></a></li>
+					<li><a href="../salon/">サロン情報<br>
+						<span>salon</span></a></li>
+					<li><a href="../campaign/">キャンペーン<br>
+						<span>Campaign</span></a></li>
+					<li><a href="../counseling/">予約フォーム<br>
+						<span>Reserve</span></a></li>
+				</ul>
+			</nav>
+			<a href="tel:●" id="phone"><img src="../images/header_phone.png" width="150" height="57" alt="お電話でのご予約はこちら●11：00～20:00（年末年始除く）"></a> </div>
+		<a href="#" id="spmenubtn"></a> </div>
+</header> -->
+<div id="titlebox">
+	<h1><span class="en">RESERVATION</span><span class="jp">無料カウンセリング予約フォーム</span></h1>
+  <?php if(!$errmsg){ ?>
+  <p>入力内容をご確認の上、「送信」ボタンを押してください。</p>
+  <?php }else{ ?>
+  <p class="bar mt0">入力項目が不足しています。ご確認ください。</p>
+  <?php } ?>
+</div>
+<div id="content" class="reserve">
+	<form action="complete.html" name="frm" id="frm" method="post">
+    <input type="hidden" name="mode" value="send">
+    <input type="hidden" name="id" value="<?php echo $_REQUEST['id'];?>"/>
+    <input type="hidden" name="shop" value="<?php echo $_POST['shop'];?>" />
+    <input type="hidden" name="hope_date" value="<?php echo $_POST['hope_date'];?>" />
+    <input type="hidden" name="hope_time" value="<?php echo $_POST['hope_time'];?>" />
+    <input type="hidden" name="shop_id" value="<?php echo $_POST['shop_id'];?>" />
+    <input type="hidden" name="name" value="<?php echo $_POST['name'];?>" />
+    <input type="hidden" name="name_kana" value="<?php echo $_POST['name_kana'];?>" />
+    <input type="hidden" name="birthday" value="<?php echo $_POST['birthday_y']."/".$_POST['birthday_m']."/".$_POST['birthday_d'];?>" />
+    <input type="hidden" name="tel" value="<?php echo $_POST['tel'];?>" />
+    <input type="hidden" name="mail" value="<?php echo $_POST['mail'];?>" />
+    <!-- <input type="hidden" name="pair_flg" value="<?php echo $_POST['pair_flg'];?>" /> -->
+    <input type="hidden" name="campaign_flg" value="<?php echo $_POST['campaign_flg'];?>" />
+    <input type="hidden" name="hope_campaign_checked" value="<?php echo $_POST['hope_campaign_checked'];?>" />
+    <input type="hidden" name="hope_campaign" value="<?php echo $_POST['hope_campaign'];?>" />
+    <!-- <input type="hidden" name="hopes_discount" value="<?php echo $_POST['hopes_discount'];?>" /> -->
+    <!-- <input type="hidden" name="persons" value="<?php echo $_POST['nunzu'];?>" /> -->
+    <!-- <input type="hidden" name="echo" value="<?php echo $_POST['echo'];?>" /> -->
+    <!-- <input type="hidden" name="mag" value="<?php echo $_POST['mag'];?>" /> -->
+		<h2 class="bar mt0">入力内容のご確認</h2>
+		<table class="main">
+			<tr>
+				<th class="tit">無料体験キャンペーン</th>
+				<td colspan="2">
+          <?php if($_POST['hope_campaign_checked'] == 1){ ?>
+            希望しない
+          <?php }else{
+             echo $_POST['hope_campaign'];
+          } ?>
+				</td>
+			</tr>
+			<tr>
+				<th>ご希望店舗</th>
+				<td><?php echo $_POST['shop'];?></td>
+			</tr>
+			<tr>
+				<th>ご希望日程</th>
+				<td>
+					<?php echo $_POST['hope_date'];?>
+					<span class="hope_time"><?php echo $_POST['hope_time'];?></span>
+				</td>
+			</tr>
+			<tr>
+				<th class="tit">お名前</th>
+				<td colspan="2">
+					<?php echo $errmsg['name'] ? $errmsg['name'] : $_POST['name'];?>
+				</td>
+			</tr>
+			<tr>
+				<th class="tit">お名前フリガナ</th>
+				<td colspan="2">
+					<?php echo $errmsg['name_kana'] ? $errmsg['name_kana'] : $_POST['name_kana'];?>
+				</td>
+			</tr>
+			<tr>
+				<th class="tit">生年月日</th>
+				<td colspan="2">
+					<?php echo $errmsg['birthday'] ? $errmsg['birthday'] : ($_POST['birthday_y']."年".$_POST['birthday_m']."月".$_POST['birthday_d']."日");?>
+				</td>
+			</tr>
+			<tr>
+				<th class="tit">ご連絡先電話番号</th>
+				<td colspan="2">
+					<?php echo $errmsg['tel'] ? $errmsg['tel'] : $_POST['tel'];?>
+				</td>
+			</tr>
+			<tr>
+				<th class="tit">メールアドレス</th>
+				<td colspan="2">
+					<?php echo $errmsg['mail'] ? $errmsg['mail'] : $_POST['mail'];?>
+				</td>
+			</tr>
+			<!-- <tr>
+				<th class="tit">サロンでの脱毛経験</th>
+				<td colspan="2">
+						<?php echo $errmsg['pair_flg'] ? $errmsg['pair_flg'] : $_POST['pair_flg'];?>
+				</td>
+			</tr> -->
+      <tr>
+        <th>注意事項・<br>プライバシーポリシー</th>
+        <td colspan="2">
+          <?php if(!$errmsg['doui']){ ?>
+            注意事項・プライバシーポリシーに同意し申し込む
+          <?php }else{
+            echo $errmsg['doui'];
+          } ?>
+        </td>
+      </tr>
+		</table>
+		<div class="buttonbox">
+			<?php if(!$errmsg && $_POST['mode']=="conf"){?>
+        <input id="submit02" type="submit" value="送信">
+        <a href="javascript:history.back();" class="backbtn">戻る</a>
+			<?php }else{ ?>
+				<a href="javascript:history.back();" class="backbtn">戻る</a>
+			<?php } ?>
+		</div>
+	</form>
+</div>
+<footer>
+    <div class="inner">
+    <a href="#" id="pagetop">TOP PAGE</a>
+  </div>
+  <div class="bg">
+    <div class="inner">
+<!--  <div class="bg">
+    <ul>
+      <li><a href="../salon/">サロン情報</a></li>
+      <li><a href="../staff/">スタッフ紹介</a></li>
+      <li><a href="../faq/">よくある質問</a></li>
+      <li><a href="../research/">メンズ脱毛意識調査</a></li>
+      <li><a href="../about/#flow">来店からの流れ</a></li>
+      <li><a href="../voice/">お客様の声</a></li>
+      <li><a href="../company/">会社概要</a></li>
+      <li><a href="../recruit/">採用情報</a></li>
+      <li><a href="../privacy/">プライバシーポリシー</a></li>
+      <li><a href="../sitemap/">サイトマップ</a></li>
+    </ul>
+    <p>&copy;2015.MEN’S KIREIMO.All Rights Reserved.</p>
+  </div> -->
+      <p>&copy;2016.MEN’S KIREIMO.All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript">
+  $(document).ready(function(){
+      setURLParamsThenBackToStep3();
+  });
+  var setURLParamsThenBackToStep3 = function(){
+      var params = {};
+      $("#frm input[type=hidden]").each(function(i, obj){
+          params[$(this).attr("name")] = $(this).attr("value");
+      });
+      sessionStorage.setItem('params', JSON.stringify(params));
+  };
+</script>
+      <?php echo $tag_common2;?>
+</body>
+</html>

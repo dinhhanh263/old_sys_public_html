@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+/* ！順次、修正の入ったファイルごとに設定を行っています */
+/* ！table,select,input,textareaに関するcssは共通化できる場合、class名を設定し共通化すること */
+
+
+/* sheet.php */
+@media screen and (max-width: 768px) {
+
+}
+*{/* 全ページ共通の可能性あり */
+	box-sizing:border-box;
+  -webkit-text-size-adjust : 100%;
+}
+#edit #table-content,
+#sheet #table-content{/* 全ページ共通の可能性あり */
+	position:relative;
+}
+#content-table{/* 全ページ共通の可能性あり */
+	border:0;
+	margin:0;
+	padding:0;
+	width:100%;
+}
+/* sheet独自 */
+/* scroll bar */
+#sheet::-webkit-scrollbar{
+	overflow:hidden;
+	width:0;
+}
+#sheet::-webkit-scrollbar:horizontal{
+	height:0;
+}
+.sheet-table{
+  font-size: 16px;
+	border:0;
+  margin:30px auto 0;
+	position:relative;
+	width:90%;
+}
+.th{
+	height:50px;
+}
+.title{
+	display:block;
+	padding-top:1.5em
+}
+/* table */
+.sheet-table td {
+  border: 1px solid #d2d2d2;
+  padding: 5px 5px 5px 5px;
+}
+/* dl */
+.sheet-table dt{
+	padding:0.5em 0 0.5em 1em;
+}
+.sheet-table dd{
+  font-size: 18px;
+	padding:1em 1em 2em 1em;
+}
+/* input select textarea label */
+#sheet select,
+#sheet input[type="text"],
+#sheet input[type="number"],
+#sheet input[type="tel"],
+#sheet input[type="email"],
+#sheet textarea{
+	-webkit-appearance:none;
+	border:solid 1px #E3E3E3;
+	border-radius:3px;
+	font-size:18px;
+	margin:2px;
+	min-height:26px;
+  padding:3px;
+}
+#sheet input[type="submit"],
+#sheet input[type="reset"]{
+	-webkit-appearance: button;
+	font-size:18px;
+	font-weight:bold;
+  height: 60px;
+  margin-top: 10px;
+	width:100px;
+}
+#sheet input[type="submit"]{
+  background-image: linear-gradient(to bottom, #D3EDFB,#96D7FA);
+  border: solid 1px #9CADAC;
+	border-radius:5px;
+}
+#sheet input[type="reset"]{
+	background-color:#999;
+	border:solid 1px #333;
+	border-radius:5px;
+}
+#sheet label{
+  border-radius: 8px;
+	color:#333;
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  padding:15px 10px 15px 5px;
+  margin:0 5px 10px;
+}
+#sheet label{
+  border:solid 1px #96D7FA;
+}
+.checked{
+  border:solid 1px #D3EDFB;
+  background-color: #D3EDFB;
+}
+/* step */
+#step{
+	background:#E1F1FA;
+  position: fixed;
+  left: 0;
+	top:50px;
+	width:30px;
+}
+#step #step1.now,
+#step #step2.now,
+#step #step3.now,
+#step #step4.now{
+	background:#4BBDFA;
+	position:relative;
+}
+#step:after{
+	content:"";
+  border-top: 20px solid #E1F1FA;
+  border-left: transparent 15px solid;
+  border-right: transparent 15px solid;
+  position: absolute;
+  bottom: -20px;
+}
+.now:after{
+	content:"";
+  border-top: 20px solid #4BBDFA;
+  border-left: transparent 15px solid;
+  border-right: transparent 15px solid;
+  position: absolute;
+  bottom: -20px;
+	z-index:1;
+}
+#sheet #step1,
+#sheet #step2,
+#sheet #step3,
+#sheet #step4{
+	display:block;
+ -webkit-transition:0.1s linear;
+         transition:0.1s linear;
+}
+/* ques area */
+.name{
+	font-size:18px;
+}
+.td_ques{
+	font-weight:bold;
+	min-width:5em;
+}
+.required{
+	font-weight:bold;
+}
+.required:before{
+color: #FA0025;
+font-weight: bold;
+content: "*";
+font-size: 18px;
+}
+#sheet input[type="text"].readonly{
+	border:solid 1px #f5f5f5;
+}
+.submit_btn{
+	text-align:center;
+}
+.reset_btn{
+	text-align:right;
+}
+.error{
+	color:#FA0025;
+}
+.error_input{
+	background-color:#FAE1EC;
+	border:solid 1px #FAAFCF !important;
+}
+dt.td_ques{
+	border:1px solid #d2d2d2;
+}
+dt.required{
+	border:1px solid #FAD2D8;
+}
+.ques_sel{
+	padding-bottom:20px;
+}
+/* width */
+#sheet .w5{
+	width:5em;
+}
+#sheet .w10{
+	width:10em;
+}
+#sheet .w17{
+	width:17em;
+}
+#sheet .w30{
+	width:30em;
+}
+#sheet .w40{
+	width:40em;
+}
+.margin10{
+	margin-top:10px;
+}
+.margin30{
+	margin-top:30px;
+}
+.indent01{
+	margin-left:1em;
+}
+.indent06{
+	margin-left:6em;
+}
+.d_block{
+	display:block;
+}
+.d_inline{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+#sheet #hogosha{
+	display:none;
+}
+
+/* edit.php */
+#edit #id-form{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+#edit #related-activities{/* 他ページ共通の可能性あり */
+	float:none;
+}
+#edit #related-act-top{/* 他ページ共通の可能性あり */
+	overflow:hidden;
+}
+
+/* 20170904 add ueda */
+.sheet_note{font-size:12px;}
